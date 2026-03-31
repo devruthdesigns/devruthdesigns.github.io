@@ -1,57 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ruth Designs - Coming Soon</title>
-
+  <title>Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      /* 🔥 Premium gradient */
-      background: white;
+      background: #f9f9f9; /* light white background */
       font-family: 'Playfair Display', serif;
     }
 
-    img {
-      width: 180px;
-      max-width: 80%;
-      margin-bottom: 30px;
+    .container {
+      display: flex;
+      height: 100vh;
     }
 
-    h1 {
-      color: #a60031;
-      font-size: 42px;
-      letter-spacing: 4px;
-      margin: 0;
+    /* LEFT SIDE (COMING SOON) */
+    .left {
+      width: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left:20px;
+
     }
 
-    p {
-      color: #cb9a38;
-      font-size: 20px;
-      letter-spacing: 6px;
-      margin-top: 10px;
+    .vertical-text {
+      transform: rotate(-90deg);
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+       /*color: #0c3c4c; dark teal like your image */
+      background: linear-gradient(180deg, #a60031, #cb9a38);
+  -webkit-background-clip: text;
+  background-clip: text;              /* important */
+  -webkit-text-fill-color: transparent;
+  color: transparent;    
+      white-space: nowrap;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
+    /* RIGHT SIDE BOX */
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 80%;
+      max-width: 900px;
+      height: 300px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      position:relative;
+      border-radius: 12px;
+    }
+
+    /* LOGO INSIDE BOX */
+    .box img {
+      max-width: 200px;
+      width: 60%;
+    }
+.box::before {
+  content: "";
+  position: absolute;
+
+  left: -40px; /* distance from box */
+  top: 0;
+
+  width: 2px;
+  height: 100%; /* 🔥 matches box height exactly */
+
+  background: linear-gradient(to bottom, #a60031, #cb9a38);
+}
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
       }
 
-      p {
-        font-size: 12px;
-        letter-spacing: 4px;
+      .left {
+        height: 100px;
+        width: 100%;
       }
 
-      img {
-        width: 140px;
+      .vertical-text {
+        transform: rotate(0deg);
+        font-size:20px;
+
+      }
+
+      .box {
+        width: 90%;
+        height: 200px;
+      }
+      .box::before {
+    left: 50%;
+    top: -40px;
+
+    width: 60px;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(to right, #a60031, #cb9a38);
       }
     }
   </style>
@@ -59,12 +116,23 @@
 
 <body>
 
-  <!-- LOGO -->
-  <img src="Ruth-Designs-Logo-Transparent.png" alt="Ruth Designs Logo">
+<div class="container">
 
-  <!-- TEXT -->
-  <h1>COMING</h1>
-  <p>SOON</p>
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <div class="vertical-text">COMING SOON</div>
+    <div class="line"></div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+    <div class="box">
+      <!-- YOUR LOGO HERE -->
+      <img src="Ruth-Designs-Logo-Transparent.png" alt="Logo">
+    </div>
+  </div>
+
+</div>
 
 </body>
-</html>
+</html></html>
