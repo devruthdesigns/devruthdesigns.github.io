@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Coming Soon</title>
+  <title>Ruth Designs - Coming Soon</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: black;
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      text-align: center;
+
+      /* 🔥 Premium gradient */
+      background: linear-gradient(135deg, #f5e6d3, #e8cba3, #cb9a38);
+      font-family: 'Playfair Display', serif;
     }
 
     img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* keeps full image visible */
+      width: 180px;
+      max-width: 80%;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #a60031;
+      font-size: 42px;
+      letter-spacing: 4px;
+      margin: 0;
+    }
+
+    p {
+      color: #7a5a2a;
+      font-size: 16px;
+      letter-spacing: 6px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      img {
+        width: 140px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <img src="coming-soon_20260331_125817_0000.png" alt="Coming Soon">
+  <!-- LOGO -->
+  <img src="logo.png" alt="Ruth Designs Logo">
+
+  <!-- TEXT -->
+  <h1>COMING</h1>
+  <p>SOON</p>
 
 </body>
 </html>
