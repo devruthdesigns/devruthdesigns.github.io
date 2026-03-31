@@ -2,52 +2,64 @@
 <html>
 <head>
   <title>Coming Soon</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
       background: black;
     }
 
-    video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-    }
-
-   /* .fallback {
+    .container {
       position: fixed;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      overflow: hidden;
+    }
+
+    video, img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* 🔥 IMPORTANT FIX */
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    img {
       display: none;
-    } */
+    }
   </style>
 </head>
 
 <body>
 
+<div class="container">
+
   <!-- VIDEO -->
-  <video autoplay muted loop playsinline>
+  <video autoplay muted loop playsinline id="video">
     <source src="coming-soon.mp4" type="video/mp4">
   </video>
 
   <!-- FALLBACK IMAGE -->
-   <!--  <img src="coming-soon.jpg" class="fallback" id="fallbackImage">  -->
+  <img src="coming-soon.jpg" id="fallback">
 
-  <script>
-    const video = document.querySelector("video");
-    const fallback = document.getElementById("fallbackImage");
+</div>
 
-    video.onerror = function() {
-      video.style.display = "none";
-      fallback.style.display = "block";
-    };
-  </script>
+<script>
+  const video = document.getElementById("video");
+  const fallback = document.getElementById("fallback");
+
+  video.onerror = function () {
+    video.style.display = "none";
+    fallback.style.display = "block";
+  };
+</script>
 
 </body>
 </html>
