@@ -44,8 +44,8 @@
   <!-- VIDEO 
   <video autoplay muted loop playsinline id="video">
     <source src="coming-soon.mp4" type="video/mp4">
-  </video>
- -->
+  </video>  -->
+ 
   <!-- FALLBACK IMAGE -->
   <img src="coming-soon.jpg" id="fallback">
 
@@ -54,11 +54,7 @@
 <script>
   const video = document.getElementById("video");
   const fallback = document.getElementById("fallback");
-
-  video.onerror = function () {
-    video.style.display = "none";
-    fallback.style.display = "block";
-  };
+  //
 </script>
 
 </body>
