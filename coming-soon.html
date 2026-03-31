@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: #f9f9f9; /* light white background */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* LEFT SIDE (COMING SOON) */
+    .left {
+      width: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .vertical-text {
+      transform: rotate(-90deg);
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 5px;
+       /*color: #0c3c4c; dark teal like your image */
+      color: linear-gradient(to bottom, #a60031, #cb9a38);
+    }
+
+    .line {
+      width: 2px;
+      height: 80px;
+      background: #0c3c4c;
+      margin-top: 20px;
+      background: linear-gradient(to bottom, #a60031, #cb9a38);
+    }
+
+    /* RIGHT SIDE BOX */
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 80%;
+      max-width: 900px;
+      height: 300px;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* LOGO INSIDE BOX */
+    .box img {
+      max-width: 200px;
+      width: 60%;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left {
+        height: 100px;
+        width: 100%;
+        flex-direction: row;
+      }
+
+      .vertical-text {
+        transform: rotate(0deg);
+        font-size:20px;
+
+      }
+
+      .line {
+        width: 60px;
+        height: 2px;
+        margin: 0 10px;
+      
+      }
+
+      .box {
+        width: 90%;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <div class="vertical-text">COMING SOON</div>
+    <div class="line"></div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+    <div class="box">
+      <!-- YOUR LOGO HERE -->
+      <img src="Ruth-Designs-Logo-Transparent.png" alt="Logo">
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
