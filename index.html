@@ -1,138 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Coming Soon</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruth Designs – Creative Design Studio</title>
+  <meta name="description" content="Ruth Designs is a creative graphic design studio specialising in logo design, packaging, branding, banners, and social media creatives.">
+  <meta name="keywords" content="Ruth Designs, graphic design, logo design, packaging design, branding, banner design, social media design, creative studio">
+  <meta name="author" content="Ruth Designs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ruthdesigns.in/">
 
-  <style>
-    body {
-      margin: 0;
-      background: #f9f9f9; /* light white background */
-      font-family: 'mainlux', Roboto;
-    }
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ruthdesigns.in/">
+  <meta property="og:title" content="Ruth Designs – Creative Design Studio">
+  <meta property="og:description" content="Explore our portfolio of logo design, packaging, branding, banners, and social media creatives.">
+  <meta property="og:image" content="https://ruthdesigns.in/public/ruthdesigns_logo_transparent.png">
+  <meta property="og:site_name" content="Ruth Designs">
 
-    .container {
-      display: flex;
-      height: 100vh;
-    }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ruth Designs – Creative Design Studio">
+  <meta name="twitter:description" content="Explore our portfolio of logo design, packaging, branding, banners, and social media creatives.">
+  <meta name="twitter:image" content="https://ruthdesigns.in/public/ruthdesigns_logo_transparent.png">
 
-    /* LEFT SIDE (COMING SOON) */
-    .left {
-      width: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-left:20px;
-
-    }
-
-    .vertical-text {
-      transform: rotate(-90deg);
-      font-size: 26px;
-      font-weight: bold;
-      letter-spacing: 3px;
-       /*color: #0c3c4c; dark teal like your image */
-      background: linear-gradient(180deg, #a60031, #cb9a38);
-  -webkit-background-clip: text;
-  background-clip: text;              /* important */
-  -webkit-text-fill-color: transparent;
-  color: transparent;    
-      white-space: nowrap;
-    }
-
-    /* RIGHT SIDE BOX */
-    .right {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .box {
-      width: 80%;
-      max-width: 900px;
-      height: 300px;
-      background: white;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center; 
-      position:relative;
-      border-radius: 12px;
-    }
-
-    /* LOGO INSIDE BOX */
-    .box img {
-      max-width: 200px;
-      width: 60%;
-    }
-.box::before {
-  content: "";
-  position: absolute;
-
-  left: -40px; /* distance from box */
-  top: 0;
-
-  width: 2px;
-  height: 100%; /* 🔥 matches box height exactly */
-
-  background: linear-gradient(to bottom, #a60031, #cb9a38);
-}
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-
-      .left {
-        height: 100px;
-        width: 100%;
-      }
-
-      .vertical-text {
-        transform: rotate(0deg);
-        font-size:20px;
-
-      }
-
-      .box {
-        width: 90%;
-        height: 200px;
-      }
-      .box::before {
-    left: 50%;
-    top: -40px;
-
-    width: 60px;
-    height: 2px;
-
-    transform: translateX(-50%);
-
-    background: linear-gradient(to right, #a60031, #cb9a38);
-      }
-    }
-  </style>
+  <link rel="icon" type="image/png" href="public/ruthdesigns_favicon_transparent.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<div class="container">
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo-link">
+        <img src="public/ruthdesigns_logo_transparent.png" alt="Ruth Designs" class="logo">
+      </a>
 
-  <!-- LEFT SIDE -->
-  <div class="left">
-    <div class="vertical-text">COMING SOON</div>
-    <div class="line"></div>
-  </div>
+      <div class="header-right">
+        <div class="search-wrap">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search designs…" autocomplete="off">
+          <button class="search-clear" id="searchClear" title="Clear">✕</button>
+        </div>
 
-  <!-- RIGHT SIDE -->
-  <div class="right">
-    <div class="box">
-      <!-- YOUR LOGO HERE -->
-      <img src="Ruth-Designs-Logo-Transparent.png" alt="Logo">
+        <nav class="header-nav">
+          <a class="btn btn-contact" target="_blank" rel="noopener" id="contactBtn">Contact us</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Filter Bar ── -->
+  <div class="filter-bar">
+    <div class="category-wrap" id="categoryWrap">
+      <button class="category-btn" id="categoryBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="cat-label-static">Choose Category</span>
+        <span class="cat-label-value" id="categoryLabel">All</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="category-dropdown" id="categoryDropdown" role="listbox">
+        <li class="cat-option active" data-value="all" role="option">All</li>
+        <li class="cat-option" data-value="packaging" role="option">Packaging</li>
+        <li class="cat-option" data-value="branding" role="option">Branding</li>
+        <li class="cat-option" data-value="social-media" role="option">Social Media</li>
+        <li class="cat-option" data-value="banners" role="option">Banners</li>
+      </ul>
+    </div>
+
+    <div class="filter-right">
+      <span class="item-count" id="itemCount"></span>
     </div>
   </div>
 
-</div>
+  <!-- ── Grid ── -->
+  <main class="portfolio-grid" id="portfolioGrid"></main>
 
+  <div class="no-results" id="noResults">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <p>No designs found</p>
+    <span>Try a different search or category</span>
+  </div>
+
+  <!-- ── Lightbox ── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <button class="lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+    <div class="lb-inner">
+      <img src="" alt="" id="lbImg">
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <!-- ── Contact Modal ── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="contact-modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h2>Contact Ruth Designs</h2>
+      <p>Get in touch to discuss your project</p>
+      <div class="contact-options">
+        <!-- Update WhatsApp number below -->
+        <a href="https://wa.me/+919025730487?text=Hi%20Ruth%20Designs%2C%20I'm%20interested%20in%20your%20design%20services" class="contact-option whatsapp" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <div>
+            <strong>WhatsApp</strong>
+            <span>Chat with us directly</span>
+          </div>
+        </a>
+        <!-- Update email below -->
+        <a href="mailto:info.ruthdesigns@gmail.com?subject=Design%20Enquiry" class="contact-option email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div>
+            <strong>Email</strong>
+            <span>info.ruthdesigns@gmail.com</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <p>© <span id="footerYear"></span> Ruth Designs. All rights reserved.</p>
+    <p class="footer-credit">Website by Swetha Technologies</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html></html>
+</html>
