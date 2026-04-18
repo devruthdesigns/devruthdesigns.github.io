@@ -356,6 +356,7 @@ body {
   left: var(--left);
   width: 35px;
   height: 7px;
+  transform: rotate(90deg);
   animation: dominos 1s ease infinite;
   box-shadow: 2px 2px 3px 0px rgba(0,0,0,.6);
 }
@@ -372,16 +373,8 @@ body {
 
 @keyframes dominos {
   50%  { opacity: 0.7; }
-  75%  { transform: rotate(90deg); }
+  75%  { transform: rotate(0deg); }
   80%  { opacity: 1; }
-}
-
-.lb-spinner-text {
-  color: rgba(255,255,255,.85);
-  font-size: 13px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 
 .lb-inner img.loading { opacity: 0; }
