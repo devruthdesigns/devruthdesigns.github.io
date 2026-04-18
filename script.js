@@ -156,6 +156,7 @@ const lightbox    = document.getElementById("lightbox");
 const lbImg       = document.getElementById("lbImg");
 const lbCaption   = document.getElementById("lbCaption");
 const lbClose     = document.getElementById("lbClose");
+const lbSpinner   = document.getElementById("lbSpinner");
 const lbPrev      = document.getElementById("lbPrev");
 const lbNext      = document.getElementById("lbNext");
 const modalOverlay = document.getElementById("modalOverlay");
@@ -275,11 +276,19 @@ function closeLightbox() {
 
 function updateLightbox() {
   const item = visibleItems[lightboxIndex];
-  lbImg.src = IMAGE_BASE + item.file;
-  lbImg.alt = item.title;
   lbCaption.textContent = `${item.title}  ·  ${CATEGORY_LABELS[item.category]}`;
   lbPrev.style.display = lightboxIndex > 0 ? "flex" : "none";
   lbNext.style.display = lightboxIndex < visibleItems.length - 1 ? "flex" : "none";
+
+  lbImg.classList.add("loading");
+  lbSpinner.classList.add("active");
+  lbImg.onload = lbImg.onerror = () => {
+    lbSpinner.classList.remove("active");
+    lbImg.classList.remove("loading");
+    lbImg.onload = lbImg.onerror = null;
+  };
+  lbImg.src = IMAGE_BASE + item.file;
+  lbImg.alt = item.title;
 }
 
 lbClose.addEventListener("click", closeLightbox);
